@@ -128,8 +128,9 @@ class _MoneyTextFormFieldState extends State<MoneyTextFormField> {
         _Utility.getFormattedAmount(ws.moneyFormatSettings.displayFormat, _fmf);
 
     if (widget.settings.onChanged != null) widget.settings.onChanged();
-
-    setState(() {});
+    if (this.mounted) {
+      setState(() {});
+    }
   }
 
   @override
